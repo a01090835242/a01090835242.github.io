@@ -1,0 +1,459 @@
+@charset "utf-8";
+
+*{margin: 0; padding: 0;}
+a{text-decoration: none;}
+ul{list-style: none;}
+ul li{display: inline-block;}
+/*************header**************/
+header{
+    background-color: khaki;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+/*****header_name 부분*****/
+.name{
+    height: 70px;
+}
+.nav1 >li>a{
+    color: #000;
+}
+.nav2 >li>a{
+    color: #fff;
+}
+.name p{
+    color: #000;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 6px;
+    margin-right: 500px;
+} 
+.name p span {
+    color: green;
+    font-size: 35px;
+}
+.name > p:hover{
+    color: #0fffff;
+}
+
+/****************ul li 부분*****************/
+/* a{
+    color: inherit;
+} */
+.nav .nav1{
+    font-size: 0;
+}
+.nav .nav1 li{/*선택자잘보기*/
+display: inline-block;/*헤드에서네비부분중앙을맞추기위해서는꼭이값을 줘야한다
+a의자리값임개발자도구에서a자리확인할것*/
+vertical-align: top;
+width: 100px;/*이값은.nav2의a태그들세로로늘이기위한가로값꼭줘야 
+되는width값이고이값이없으면블럭처리안되어가로로늘어져작업안됨*/
+height: 40px;
+font-size: 18px;
+font-weight: bolder;
+text-align: center;
+margin-top: 20px;
+margin-right: 30px;
+padding-right: 100px;
+/*마진어디에서떨어진자리에*/
+/*마진값도 잘맞춰야네비중앙정렬제대로된다*/
+}
+.nav .nav1 > li >a:hover{
+    background-color: yellow;
+    color: green;
+    /*상위태그a(HOME/ABOUT... 이태그들)를
+    호버했을때빨간색박스와 글자는파랑으로 바껴라*/
+}
+.nav .nav1 > li >a{
+    display: block;
+}
+.nav .nav1 > li > a:hover ~ .nav2{
+/*아래의.nav .nav2{display: none;}값줘서숨겨진하위메뉴가호버
+했을때보이게하는속성값/선택자잘확인할것*/
+    display: block;
+    padding: 0 auto;/*패딩값을주고나면손가락모양
+    오래동안유지할수있다하는데나는잘모르겠음*/
+}
+.nav .nav2{
+    display: none;
+    background-color:#fff;/*하위a태그박스호버했을때
+    색깔변하게하는것*/
+}
+.nav .nav2 a{
+    font-size: 16px;
+    font-weight: normal;
+    display: block;
+    /* margin: 10px; */
+}
+.nav .nav2 > a:hover{
+    text-decoration: underline;
+    /*하위a를 호버하면 밑줄그어짐*/
+}
+/*질문 1.하위메뉴호버하면 고정이 안됨
+2여기서 마진과 패딩값들 어떤 의미이고 이css네서 곡 필요한건지*/
+
+/*****************section_1_banner*****************/
+.banner{
+    /* box-sizing: border-box; */
+    height: 810px;
+    background-color: #fff;
+    /* background-size: cover; */
+    /* padding-top: 3px; */
+    /* position: relative; */
+}
+.banner .banner_img{
+    width: 50%;
+    height: 810px;
+    background-image: url(images_1/banner.jpg);
+    background-size: cover;
+    margin-bottom: 5px;
+    margin-top: -3px;
+    animation-name: banner_img ;
+    animation-duration: 5s;
+    animation-iteration-count: 4;
+}
+@keyframes banner_img {
+    from{
+        margin-left: 0px;
+    }
+    to{
+        margin-left: 100vh;
+    }   
+}   
+.banner> .dev1{
+    font-size: 2rem;
+    font-weight: 500px;
+    color: #000;
+    position: absolute;
+    right: 18.5%;
+    top: 250px;
+    animation-name: my_portfolio ;
+    animation-duration: 5s;
+    animation-iteration-count: 4;
+}
+@keyframes my_portfolio {
+    from{
+        margin-right: 0px;
+    }
+    to{
+        margin-right:  100vh;
+    }   
+} 
+.banner> .dev2{
+    font-size: 3rem;
+    font-weight: bolder;
+    color: #000;
+    position: absolute;
+    right: 17%;
+    top: 330px;
+    animation-name: my_portfolio ;
+    animation-duration: 5s;
+    animation-iteration-count: 4;
+}
+@keyframes my_portfolio {
+    from{
+        margin-right: 0px;
+    }
+    to{
+        margin-right: 100vh;
+    }   
+} 
+.banner > .dev1:hover{
+    color: #0fffff;
+}
+.banner > h1{
+    color: #000;
+    position: absolute;
+    font-size: 9rem;
+    font-weight: bolder;
+    right: 8%;
+    top: 400px;
+    animation-name: my_portfolio ;
+    animation-duration: 5s;
+    animation-iteration-count: 4;
+}
+@keyframes my_portfolio {
+    from{
+        margin-right: 0px;
+    }
+    to{
+        margin-right: 100vh;
+    }   
+}  
+.banner > h1:hover{
+    color:#0fffff;
+}
+.banner .img_1{
+    position: absolute;
+    left: 100px;
+    top: 10px;
+}
+
+/*********section_2_ABOUT ME*****************/
+/* .abo > .abo_wrap > set> .cir >태그들 */
+
+.abo{
+    width: 100%;
+    height: 850px;
+    background-color:  khaki;
+    text-align: center;
+
+    /* position: relative; */
+}
+.abo_wrap{
+    display: flex;
+    justify-content: space-around;
+    /* text-align: center; */
+}
+.set {
+    box-sizing: border-box;
+    width: 300px;
+    height: 300px;
+    /* background-color: yellow; */
+    margin: 0 auto;
+    margin-top: 100px;
+}
+.set> .cir{
+    width: 350px;
+    height: 350px;
+    border-radius: 350px;
+    background-color: pink;
+    line-height: 350px;
+}
+.abo1 p{
+    font-size: 50px;
+    font-weight: bolder;
+    padding-top: 50px;
+}
+.bigtext{
+    font-size: 28px;
+    font-weight: bolder;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.text{
+    font-size: 16px;
+    margin-top: 20px ;
+    margin-left: 50px;
+}
+.set:nth-of-type(1) .cir{
+    background-image: url(images_1/img14.png);
+    background-size: cover;
+}
+.set:nth-of-type(2) .cir{
+    background-image:url(images_1/img15.png);
+    background-size: cover;
+}
+.set:nth-of-type(3) .cir{
+    background-image: url(images_1/img_20.png);
+    background-size: cover;
+}
+
+/*********section_3_PORTFOLIO*****************/
+/* #container > .port > item> .img > .poto1> 태그들*/
+/* #portfolio/container/img_list/img/item1*/
+.port{
+    width: 100%;
+    height: 1700px;
+    background-color: lightblue;
+    text-align: center;
+    color: #fff;
+}.item{
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.img div{
+    margin: 70px 35px;
+    width: 400px;
+    height: 400px;
+    background-color: antiquewhite;
+}
+.port h1{
+    font-size: 80px;
+    padding-top: 50px;
+    color: #000;
+}
+.port h5{
+    font-size: 20px;
+    padding-top: 30px;
+    color: #000;
+}
+/**************img9장작업**************/
+.port .item .poto1{
+    background-image: url(images_1/img13.png);
+    background-size: cover;
+}
+.port .item .poto2{
+    background-image: url(images_1/img2.jpg);
+    background-size: cover;
+}
+.port .item .poto3{
+    background-image: url(images_1/img3.jpg);
+    background-size: cover;
+}
+.port .item .poto4{
+    background-image: url(images_1/img4.png);
+    background-size: cover;
+}
+.port .item .poto5{
+    background-image: url(images_1/img6.jpg);
+    background-size: cover;
+}
+.port .item .poto6{
+    background-image: url(images_1/img5.png);
+    background-size: cover;
+}
+.port .item .poto7{
+    background-image: url(images_1/img11.jpeg);
+    background-size: cover;
+}
+.port .item .poto8{
+    background-image: url(images_1/html.png);
+    background-size: cover;
+}
+.port .item .poto9{
+    background-image: url(images_1/img10.jpg);
+}
+
+/*********section_4_CONTACT*****************/
+.part4{
+    width: 100%;
+    height: 600px;
+    background-color: khaki;
+    /* padding-top: 20px; */
+}
+div h3{
+    font-size: 50px;
+    font-weight: bolder;
+    text-align: center;
+    padding-top: 50px;
+}
+div p{
+    font-size: 16px;
+    text-align: center;
+    padding-top: 20px;
+}
+.sns{
+    text-align: center;
+    padding: 30px;
+}
+.sns a{
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    margin: 40px;
+    text-align: center;
+    line-height: 80px;
+    background-color: #fff;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 10px #000;
+}
+.sns a i.icon{/*html에서 빠진듯.icon 물어볼것*/
+    color: red;
+}
+.float{
+    width: 100px; height: 100px;
+    border-radius: 50px 50px;
+    background-image: url(images_1/img10.png);
+    background-size: cover;
+    line-height: 100px;
+    position: absolute;
+    right: 47.5%;
+}
+.sns a::before{
+    content: '';
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.9s;
+}
+.sns a:nth-child(1)::before{
+    background-color: green;
+}
+.sns a:nth-child(2)::before{
+    background-color: red;
+}
+.sns a:nth-child(3)::before{
+    background-color: yellow;
+}
+.sns a:nth-child(4)::before{
+    background-color: green;
+}
+.sns a:hover::before{
+    width: 100%;
+}
+.sns a:hover i.icon{
+    color:#fff;
+    transform: rotateX(360deg);
+    color: #000;
+    position: relative;
+    transform: 0.9s;
+}
+
+/*********section_5_input*****************/
+form{
+    width: 30%;
+    margin: 0 auto;
+    height: 290px;
+    
+}
+.call{
+    position: relative;/*아이콘자리잡기위한position: relative*/
+    margin-top: 50px;
+}
+.call > input{
+    display: block;
+    width: 100%;/*100%는form의100%이므로input가로사이즈는브라우져전체너비의30%다*/
+    box-sizing: border-box;
+    height:50px ;
+    border: 1px solid green;
+    border-radius: 5px;
+    padding-left: 30px; /*아이콘 위치잡아주는값*/
+}
+i{
+    position: absolute;
+    top: 40%; /*아이콘왼쪽의자리잡아주느것/*/
+    left: 10px;/*아이콘정확한 자리잡아줌*/
+
+}
+.call > input:focus{
+    border: 1px solid lightskyblue;
+    box-shadow:0 0 4px lightskyblue;
+}
+.call >input:focus + .fa-solid{
+    background-color: lightskyblue;
+}
+.call >input:focus::placeholder{
+    visibility: hidden;
+}
+
+/***************footer*****************/
+footer{
+    width: 100%;
+    height: 70px;
+    background-color:#000;
+    padding: 80px 0;
+    text-align: center;
+}
+.text-1{
+    margin-top: 10px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff; 
+}
+ .fixed{
+    width: 80px; height: 80px;
+    border-radius: 40px 40px;
+    background-image: url(images_1/img10.png);
+    background-size: cover;
+    line-height: 80px;
+    position: fixed; bottom: 30px; right: 60px;
+ }
