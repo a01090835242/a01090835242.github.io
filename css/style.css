@@ -92,7 +92,7 @@ header h1 a{
         transform: translateX(0px);
     }
     to{
-        transform: translateX(120%);
+        transform: translateX(900px);
     }
 }
 #visual .inner{
@@ -104,10 +104,10 @@ header h1 a{
         transform: translate(0px);
     }
     80%{
-        transform: translateX(-80%);
+        transform: translateX(-900px);
     }
     100%{
-        transform: translateX(-80%);
+        transform: translateX(-900px);
     }
 }
 
